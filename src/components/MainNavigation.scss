@@ -27,7 +27,7 @@ header.navigation {
   width: 100%;
   z-index: 999;
 
-  .navigation-wrapper {
+  .navigation_wrapper {
     @include clearfix;
     @include outer-container;
     position: relative;
@@ -48,7 +48,7 @@ header.navigation {
 
   // Mobile view
 
-  .navigation-menu-button {
+  .navigation_menu_button {
     color: $navigation-color;
     display: block;
     float: right;
@@ -80,7 +80,7 @@ header.navigation {
     }
   }
 
-  ul.navigation-menu {
+  ul.navigation_menu {
     clear: both;
     display: none;
     margin: 0 auto;
@@ -102,7 +102,7 @@ header.navigation {
 
   // The nav items
 
-  ul li.nav-link {
+  ul li.nav_link {
     background: $navigation-background;
     display: block;
     line-height: $navigation-height;
@@ -136,14 +136,14 @@ header.navigation {
     }
   }
 
-  .active-nav-item a {
+  .active_nav_item a {
     border-bottom: 1px solid $navigation-active-link-color;
     padding-bottom: 3px;
   }
 
   // Sub menus
 
-  li.more.nav-link {
+  li.more.nav_link {
     padding-right: 0;
 
     @include media($horizontal-bar-mode) {
@@ -258,7 +258,7 @@ header.navigation {
 
   // Elements on the far right
 
-  .navigation-tools {
+  .navigation_tools {
     background: #505050;
     clear: both;
     display: block;
@@ -273,7 +273,7 @@ header.navigation {
 
   // Search bar
 
-  .search-bar {
+  .search_bar {
     $search-bar-border-color: $base-border-color;
     $search-bar-border: 1px solid $search-bar-border-color;
     $search-bar-background: lighten($search-bar-border-color, 10%);
