@@ -6,7 +6,7 @@ var loadersByExtension = require("./config/loadersByExtension");
 
 module.exports = function(options) {
 	var entry = {
-		main: options.prerender ? "./config/mainPrerenderer" : "./config/mainApp"
+		main: "./src/mainApp"
 		// second: options.prerender ? "./config/secondPrerenderer" : "./config/secondApp"
 	};
 	var loaders = {
@@ -91,14 +91,6 @@ module.exports = function(options) {
 	if(options.commonsChunk) {
 		plugins.push(new webpack.optimize.CommonsChunkPlugin("commons", "commons.js" + (options.longTermCaching && !options.prerender ? "?[chunkhash]" : "")));
 	}
-	var asyncLoader = {
-		test: require("./app/route-handlers/async").map(function(name) {
-			return path.join(__dirname, "app", "route-handlers", name);
-		}),
-		loader: options.prerender ? "react-proxy-loader/unavailable" : "react-proxy-loader"
-	};
-
-
 
 	Object.keys(stylesheetLoaders).forEach(function(ext) {
 		var stylesheetLoader = stylesheetLoaders[ext];
@@ -140,7 +132,7 @@ module.exports = function(options) {
 		output: output,
 		target: options.prerender ? "node" : "web",
 		module: {
-			loaders: [asyncLoader].concat(loadersByExtension(loaders)).concat(loadersByExtension(stylesheetLoaders)).concat(additionalLoaders)
+			loaders: [].concat(loadersByExtension(loaders)).concat(loadersByExtension(stylesheetLoaders)).concat(additionalLoaders)
 		},
 		devtool: options.devtool,
 		debug: options.debug,
