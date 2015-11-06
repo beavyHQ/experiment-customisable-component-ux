@@ -26,12 +26,12 @@ module.exports = function(options) {
 		"html": "html-loader",
 		"md|markdown": ["html-loader", "markdown-loader"]
 	};
-	var cssLoader = options.minimize ? "css-loader?module" : "css-loader?module&localIdentName=[path][name]---[local]---[hash:base64:5]";
+	var cssLoader = options.minimize ? "css-loader?module" : "css-loader?localIdentName=[path][name]---[local]---[hash:base64:5]";
 	var stylesheetLoaders = {
 		"css": cssLoader,
 		"less": [cssLoader, "less-loader"],
 		"styl": [cssLoader, "stylus-loader"],
-		"scss|sass": [cssLoader, "sass-loader"]
+		"scss|sass": [cssLoader, "sass-loader?includePaths[]=" + encodeURIComponent(path.resolve("src", "styles"))]
 	};
 	var additionalLoaders = [
 		// { test: /some-reg-exp$/, loader: "any-loader" }
