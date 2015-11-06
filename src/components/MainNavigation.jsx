@@ -1,8 +1,9 @@
 import React from "react";
-import Styles from "./MainNavigation.scss";
+import DefaultStyles from "./MainNavigation.scss";
 
 export default class MainNavigation extends React.Component{
   render(){
+    const Styles = this.props.styles || DefaultStyles;
     return <header className={Styles.navigation} role="banner">
             <div className={Styles.navigation_wrapper}>
               <a href="javascript:void(0)" className={Styles.logo}>
