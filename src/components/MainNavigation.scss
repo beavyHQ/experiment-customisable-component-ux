@@ -1,6 +1,6 @@
 @import "app";
 
-header.navigation {
+header{
   $base-border-color: gainsboro !default;
   $base-border-radius: 3px !default;
   $action-color: #477DCA !default;
@@ -21,11 +21,13 @@ header.navigation {
   $navigation-submenu-width: 12em;
   $horizontal-bar-mode: $large-screen;
 
-  background-color: $navigation-background;
-  border-bottom: 1px solid darken($navigation-background, 10);
-  min-height: $navigation-height;
-  width: 100%;
-  z-index: 999;
+  &.navigation {
+    background-color: $navigation-background;
+    border-bottom: 1px solid darken($navigation-background, 10);
+    min-height: $navigation-height;
+    width: 100%;
+    z-index: 999;
+  }
 
   .navigation_wrapper {
     @include clearfix;
